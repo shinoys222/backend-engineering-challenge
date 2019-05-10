@@ -13,12 +13,13 @@ To run using java follow these commands from the project root folder. An uber fa
 ```
 sbt assembly
 java -jar ./jar/unbabel.jar --input_directory input_data --window_size 10 --output_directory out
-
 ```
 
 To run with sbt use this command from project root folder
 
-  sbt "run --input_directory input_data --window_size 10 --output_directory out"
+```
+sbt "run --input_directory input_data --window_size 10 --output_directory out"
+```
 
 
 Spark Streaming has restrictions reading and writing to/from a single file due its distributive nature. Also if you need to run the program again, then you may need to delete the output folder and the checkpoint-dir folder since the application will start from where it left last time.
@@ -28,6 +29,8 @@ Spark Streaming has restrictions reading and writing to/from a single file due i
 
 However, if specific use case as mentioned in the problem statement is required, please check out the following python implementation 
   
-  python3 aggregator.py --input_file ./input_data/sample_input.json --window_size 10 --output_file out.json
+```
+python3 aggregator.py --input_file ./input_data/sample_input.json --window_size 10 --output_file out.json
+```
 
 In both the cases window_size provided is assumed to be in minutes
