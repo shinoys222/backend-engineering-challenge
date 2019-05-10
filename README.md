@@ -22,7 +22,7 @@ sbt "run --input_directory input_data --window_size 10 --output_directory out"
 ```
 
 
-Spark Streaming has restrictions reading and writing to/from a single file due its distributive nature. Also if you need to run the program again, then you may need to delete the output folder and the checkpoint-dir folder since the application will start from where it left last time.
+Spark Streaming has restrictions reading and writing to/from a single file due its distributive nature. Also if you need to run the program again, then you may need to delete the output folder and the checkpoint-dir folder since the application will start from where it left last time. Anyways, for an ideal production scenario, the output will most probably be streamed to a kafka Queue or written to a database table. This will be ideal or those kind of scenarios.
 
 
 ## Python Implementation
